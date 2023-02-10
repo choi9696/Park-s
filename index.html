@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body{
+      margin:0;
+      display: flex;
+      justify-content:center;
+      background: url(./background.png);
+    }
+    .container{
+      width:390px;
+      /* background-color: #ff9d73; */
+      background-color: #bae0ff;
+      height:100%;
+    }
+    .photos{
+      margin-top: 30px;
+    }
+    .photo-frame{
+      background-color: #fff;
+      margin: 15px 20px;
+      height: 200px;
+      background-size: cover;
+      position: relative;
+      cursor: pointer;
+    }
+    .footer{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .f-title{
+      color: #fff;
+      font-size: 25px;
+      font-weight: 900;
+    }
+    .f-date{
+      color: #fff;
+      font-size: 15px;
+      font-weight: 500;
+    }
+    #image1{
+      background-image: url('./img1.jpg');
+      background-size: cover;   
+       
+    }
+    #image2{
+      background-image: url('./img4.jpg');
+      background-size: cover ;  
+      background-position: left center;
+      
+
+    }
+    #image3{
+      background-image: url('./img2.jpg');
+      background-size: cover ;  
+      background-position: center bottom;
+    }
+    #image4{
+      background-image: url('./img4.jpg');
+      background-size: cover ;  
+      background-position: left center;
+    }
+    .photo_description{
+      color: #fff;
+      background-color: #000;
+      width: fit-content;
+      padding: 0 20px;
+      margin-bottom: 10px;
+      border-radius: 10px;
+
+      position: absolute;
+      bottom: 0;
+      transform: translate(-50%);
+      left: 50%;
+      
+      opacity: 0;
+    }
+    .showText{
+      opacity: 0;
+    }
+    .hideText{
+      opacity: 1;
+      transition: opacity 0.1s linear;
+    }
+  </style>
+  <script>
+    function showText(number){
+      if (number === 1) {
+        document.querySelector("#desc1").classList.remove("showText");
+        document.querySelector("#desc1").classList.add("hideText");
+      } else if (number === 2) {
+        document.querySelector("#desc2").classList.remove("showText");
+        document.querySelector("#desc2").classList.add("hideText");
+      } else if (number ===3) {
+        document.querySelector("#desc3").classList.remove("showText");
+        document.querySelector("#desc3").classList.add("hideText");
+      } else {
+        document.querySelector("#desc4").classList.remove("showText");
+        document.querySelector("#desc4").classList.add("hideText");
+      }
+
+    }
+
+    function alertText(number) {
+      // alert("${number}번째 사진 클릭 :)");
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <div class="photos">
+      <div id="image1" class="photo-frame"
+      onmouseover="hideText(1)"
+      onmouseout="showText(1)"
+      onclick="alertText(1)"
+      >        
+        <span id="desc1" class="photo_description">
+          Park ji hye :)
+        </span>
+      </div>
+      <div id="image2" class="photo-frame"
+      onmouseover="hideText(2)"
+      onmouseout="showText(2)"
+      onclick="alertText(2)"
+      >
+        <span id="desc2" class="photo_description">
+          Park sung yoon :)
+        </span>
+      </div>
+      <div id="image3" class="photo-frame"
+      onmouseover="hideText(3)"
+      onmouseout="showText(3)"
+      onclick="alertText(3)">
+        <span id="desc3" class="photo_description">
+          Park ji hye :)
+        </span>
+      </div>
+      <div id="image4"class="photo-frame"
+      onmouseover="hideText(4)"
+      onmouseout="showText(4)"
+      onclick="alertText(4)">
+        <!-- <iframe src="" frameborder="0" class="video"></iframe> -->
+        <span id="desc4" class="photo_description">
+          Park's Family :)
+        </span>
+      </div>
+      <div class="footer">
+        <p class="f-title">Park's Family</p>
+        <p class="f-date">2023.02.10</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
